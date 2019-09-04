@@ -6,8 +6,7 @@ def fit(input):
         data.append(input[i:i+2])
 
 def generation(n):
-    for i in range(n):
-        
+    for _ in range(n):
         tmp = random.choice(data)
         print(tmp[0], tmp[1], end = ' ')
         for j in range(len(data)):
@@ -20,6 +19,12 @@ def generation(n):
 g = int(input()) #длина сгенерированной строки (результат будет в 3 раза длиннее желаемого (фича))
 
 data = []
-f = open('Tolstoy.txt')   
-fit(f.read())             
+string = ""
+f = open('Tolstoy.txt')
+for char in f.read():
+    if ((char != '.') and (char != ',') and (char != '!') and (char != '?') and (char != '-')):
+        string += char
+string = string.lower()
+
+fit(string)
 generation(g)
