@@ -11,7 +11,7 @@ class Model():
         string = string.lower()
         
         string = string.split(' ')
-        for i in range(len(string)-3):
+        for i in range(len(string)-1):
             Model.data.append(string[i:i+2])
 
     def generation(self, n):
